@@ -1,27 +1,16 @@
-import { useEffect, useRef, useState } from 'react'
-
+import { useState, useCallback } from 'react'
+import { searchweather } from '../Services/weather'
+import { searchTime } from '../Services/Time'
+//
 export function useInput () {
-  const [input, updateInput] = useState('')
-  const [error, setError] = useState(null)
-  const firstInput = useRef(true)
-  useEffect(() => {
-    if (firstInput.current) {
-      firstInput.current = input === ''
-      return
-    }
-    if (input === undefined) {
-      setError('No weather results')
-      return
-    }
-    if (input === '') {
-      setError('Type a City name')
-      return
-    }
-    if (input.length < 1) {
-      setError('Type more than 1 character')
-      return
-    }
-    setError(null)
-  }, [input])
-  return { error, input, updateInput }
+  // weather data
+  const [weather, setWeather] = useState([])
+  const [time, setTime] = useState([])
+  const getInput = useCallback(async ({ input }) => {
+    const newWeather = await searchweather(input)
+    setWeather(newWeather)
+    const newTime = await searchTime(input)
+    setTime(newTime)
+  }, [])
+  return { weather, getInput, time }
 }

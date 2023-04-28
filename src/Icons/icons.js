@@ -1,2 +1,6 @@
-export const windIcon = 'https://i.postimg.cc/qRCZTvKH/icons8-windy-weather-100.png'
+export const windIcon = 'https://i.postimg.cc/sXzRmBXP/wind.png'
 export const locationIcon = 'https://i.postimg.cc/R0tYQSTF/location.png'
+export const termoMaxIcon = 'https://i.postimg.cc/h4LKq6pp/termo.png'
+export const termoMinIcon = 'https://i.postimg.cc/tTCtNdKG/termo-2.png'
+export const humidityIcon = 'https://i.postimg.cc/D0kNPRwS/icons8-wet-100.png'
+export const searchIcon = 'https://i.postimg.cc/gJtw0fxj/lupa.png'

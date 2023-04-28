@@ -1,13 +1,13 @@
 import React from 'react'
 import { Info } from './Components/Info'
+import { useValidate } from './Hooks/useValidate'
 import { useInput } from './Hooks/useInput'
-import { useWeather } from './Hooks/useWeather'
 
 const App = () => {
   // input
-  const { error, input, updateInput } = useInput()
+  const { error, input, updateInput } = useValidate()
   // get data
-  const { getWeather, weather } = useWeather({ input })
+  const { getInput, weather, time } = useInput({ input })
   // handleChange
   const handleChange = (event) => {
     const newInput = event.target.value
@@ -16,12 +16,12 @@ const App = () => {
   // handleSubmit
   const handleSubmit = (event) => {
     event.preventDefault()
-    getWeather({ input })
+    getInput({ input })
   }
   //
   // console.log(weather)
   return (
-    <div className='bg-slate-900 w-full h-screen flexed'>
+    <div className=' w-full h-screen flexed'>
       {/* Header */}
       <header>
         {/* Form */}
@@ -31,15 +31,15 @@ const App = () => {
             value={input}
             onChange={handleChange}
           />
-          <button>Search</button>
+          <button className='bg-white/80 rounded-full w-20 '>Search</button>
         </form>
-        <div>
+        <div className='text-red-500'>
           {error && <p>{error}</p>}
         </div>
       </header>
       {/* Main */}
       <main>
-        <Info data={weather} />
+        <Info weather={weather} time={time} />
       </main>
     </div>
   )
