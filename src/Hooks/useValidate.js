@@ -17,7 +17,7 @@ export function useValidate () {
       setError('Type a City name')
       return
     }
-    if (input.length < 1) {
+    if (input.length < 2) {
       setError('Type more than 1 character')
       return
     }

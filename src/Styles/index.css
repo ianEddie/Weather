@@ -9,7 +9,7 @@
 }
 
 html {
-    background-image: url('https://i.postimg.cc/MGkTjPFd/sky.jpg');
+    background-image: url('https://i.postimg.cc/fT9ys4V6/sky2.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -23,8 +23,31 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    backdrop-filter: blur(3px);
+    backdrop-filter: brightness(95%);
+
 }
+
+/** Info Backgrounds **/
+.bg-1 {
+    background-image: url('https://i.postimg.cc/fT9ys4V6/sky2.jpg');
+    background-position: 0 0;
+}
+
+.bg-2 {
+    background-image: url('https://i.postimg.cc/MGkTjPFd/sky.jpg');
+    background-position: center center;
+}
+
+.bg-b {
+    background: #E0EAFC;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #CFDEF3, #E0EAFC);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #cfdef300, #e0eafc69);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+
 
 /** Header **/
 header {
@@ -38,10 +61,8 @@ header {
     gap: 1em;
     font-family: 'Bruno Ace', cursive;
     font-size: 0.8em;
+    backdrop-filter: brightness(95%) blur(1px);
 }
-
-/** Buttons **/
-button {}
 
 /** Inputs **/
 input {

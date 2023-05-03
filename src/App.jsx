@@ -19,7 +19,7 @@ const App = () => {
     getInput({ input })
   }
   //
-  // console.log(weather)
+
   return (
     <div className=' w-full h-screen flexed'>
       {/* Header */}
@@ -30,8 +30,10 @@ const App = () => {
             type='text'
             value={input}
             onChange={handleChange}
+            className={`${error ? 'border-red-500 border-2 bg-red-500/10' : 'border-none bg-white/80'}`}
+            placeholder='City name'
           />
-          <button className='bg-white/80 rounded-full w-20 '>Search</button>
+          <button className='bg-white/80 rounded-full w-20'>Search</button>
         </form>
         <div className='text-red-500'>
           {error && <p>{error}</p>}

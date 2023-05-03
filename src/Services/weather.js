@@ -4,7 +4,6 @@ export async function searchweather (input) {
   try {
     const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${input}&appid=${API_KEY}&units=metric`)
     const json = await response.json()
-
     const data = [{
       city: json.name,
       country: json.sys.country,
