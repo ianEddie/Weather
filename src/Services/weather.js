@@ -13,11 +13,11 @@ export async function searchweather (input) {
       min: json.main.temp_min,
       max: json.main.temp_max,
       humidity: json.main.humidity,
-      wind: json.wind.speed
-    }
-    ]
+      wind: json.wind.speed,
+      cod: json.cod
+    }]
     return data
   } catch (e) {
-    throw new Error('No results xd')
+    throw new Error('Data not found')
   }
 }
