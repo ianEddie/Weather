@@ -2,12 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.flexed {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
 html {
     background-image: url('https://i.postimg.cc/fT9ys4V6/sky2.jpg');
     background-repeat: no-repeat;
@@ -27,7 +21,7 @@ main {
 
 }
 
-/** Info Backgrounds **/
+/** Backgrounds **/
 .bg-1 {
     background-image: url('https://i.postimg.cc/fT9ys4V6/sky2.jpg');
     background-position: 0 0;
@@ -46,8 +40,6 @@ main {
     background: linear-gradient(to bottom, #cfdef300, #e0eafc69);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
-
-
 
 /** Header **/
 header {
@@ -75,12 +67,7 @@ input {
     font-family: 'Bruno Ace', cursive;
 }
 
-.gradient {
-    background-image: url('https://images.unsplash.com/photo-1631634900863-eb06af0b57fc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80');
-
-}
-
-/** Flex  **/
+/** Flex **/
 .flexed {
     display: flex;
     justify-content: center;

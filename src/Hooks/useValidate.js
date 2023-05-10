@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-
+//
 export function useValidate () {
   const [input, updateInput] = useState('')
   const [error, setError] = useState(null)

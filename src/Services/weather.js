@@ -1,5 +1,5 @@
 import { API_KEY } from './weatherApiKey'
-
+//
 export async function searchweather (input) {
   try {
     const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${input}&appid=${API_KEY}&units=metric`)
@@ -13,8 +13,7 @@ export async function searchweather (input) {
       min: json.main.temp_min,
       max: json.main.temp_max,
       humidity: json.main.humidity,
-      wind: json.wind.speed,
-      cod: json.cod
+      wind: json.wind.speed
     }]
     return data
   } catch (e) {

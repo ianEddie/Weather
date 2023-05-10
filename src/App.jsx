@@ -1,17 +1,17 @@
 import React from 'react'
 import { Info } from './Components/Info'
-import { useValidate } from './Hooks/useValidate'
 import { useInput } from './Hooks/useInput'
 import { motion } from 'framer-motion'
 import { formAnimate, loaderAnimate } from './Animations/animations'
-import { sunIcon } from './Icons/icons'
+import { loaderIcon } from './Icons/icons'
 import { Sign } from './Components/Sign'
+import { useValidate } from './Hooks/useValidate'
 //
 const App = () => {
   // input
   const { error, input, updateInput } = useValidate()
   // get data
-  const { getInput, weather, time, loading, errors } = useInput({ input })
+  const { weather, getInput, time, loading, errors } = useInput({ input })
   // handleChange
   const handleChange = (event) => {
     const newInput = event.target.value
@@ -25,7 +25,6 @@ const App = () => {
   //
   return (
     <div className=' w-full h-screen flexed'>
-      {/* Header */}
       <header>
         {/* Form */}
         <motion.form
@@ -55,7 +54,7 @@ const App = () => {
         {
             errors
               ? <Sign />
-              : (loading ? <motion.img src={sunIcon} alt='loader' {...loaderAnimate} /> : <Info weather={weather} time={time} />)
+              : (loading ? <motion.img src={loaderIcon} alt='loader' {...loaderAnimate} /> : <Info time={time} weather={weather} />)
         }
 
       </main>
