@@ -2,9 +2,9 @@ import React from 'react'
 import { Info } from './Components/Info'
 import { useInput } from './Hooks/useInput'
 import { motion } from 'framer-motion'
-import { formAnimate, loaderAnimate } from './Animations/animations'
-import { loaderIcon } from './Icons/icons'
-import { Sign } from './Components/Sign'
+import { formAnimate } from './Animations/animations'
+import { Loader } from './Components/Loader'
+import { NoData } from './Components/NoData'
 import { useValidate } from './Hooks/useValidate'
 //
 const App = () => {
@@ -53,8 +53,8 @@ const App = () => {
       <main>
         {
             errors
-              ? <Sign />
-              : (loading ? <motion.img src={loaderIcon} alt='loader' {...loaderAnimate} /> : <Info time={time} weather={weather} />)
+              ? <NoData />
+              : (loading ? <Loader /> : <Info time={time} weather={weather} />)
         }
 
       </main>
